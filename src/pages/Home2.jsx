@@ -2,8 +2,7 @@ import React, { useEffect,useState } from 'react';
 import { Spinner } from 'flowbite-react';
 import api from '../api/api';
 import GridRadios from '../components/grids/GridRadios';
-import NavBar from '../components/Navbar';
-import FloatingPanel from '../components/FloatingPanel';
+
 import ModalPlayer from '../components/modals/ModalPlayer';
 import Header from '../components/Header';
 
