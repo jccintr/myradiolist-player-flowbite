@@ -2,9 +2,9 @@ import React, { useEffect,useState } from 'react';
 import { Spinner } from 'flowbite-react';
 import api from '../api/api';
 import GridRadios from '../components/grids/GridRadios';
-
 import ModalPlayer from '../components/modals/ModalPlayer';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 
 const Home2 = () => {
@@ -40,13 +40,13 @@ const onPlay = (radio) => {
 } 
 
   return (
-     <div className='w-full px-8 mx-auto'>
+     <div className='w-full px-2 mx-auto md:px-8'>
       <Header setSearchText={setSearchText}/>
-     
       <div className='flex flex-col items-center pb-4'>
             {radiosFiltrado.length>0?<GridRadios radios={radiosFiltrado} onPlay={onPlay}/>:!isLoading?<h3 className='mt-10 text-gray-900 dark:text-white'>Rádios não encontradas.</h3>:<Spinner className='mt-10' color="info" aria-label="Info spinner example" size="xl" />}
       </div>
       <ModalPlayer isOpen={isModalOpen} onClose={()=>setIsModalOpen(false)} title={radio.name} radio={radio}/>
+      <Footer/>
    </div>
   )
 }
